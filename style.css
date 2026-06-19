@@ -155,55 +155,24 @@ section {
     color: #2851E3;
     transform: translateY(-4px);
 }
-#hobbies {
-    padding: 100px 8%;
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
 }
 
-#hobbies h2 {
-    text-align: center;
-    margin-bottom: 50px;
+.cv-btn {
+    background: transparent;
+    border: 2px solid #0325a2;
+    color: #001d85;
 }
 
-.hobby-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-    gap: 25px;
+.cv-btn:hover {
+    background: #000643;
+    color: white;
 }
 
-.hobby-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.hobby-card:hover {
-    transform: translateY(-8px);
-}
-
-.hobby-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.hobby-card h3 {
-    padding: 15px 20px 10px;
-}
-
-.hobby-card p {
-    padding: 0 20px 20px;
-    color: #6B7280;
-}
-
-.hobby-card a {
-    display: inline-block;
-    padding: 0 20px 20px;
-    color: #2851E3;
-    text-decoration: none;
-    font-weight: 600;
-}
 .btn {
   display: inline-block;
   margin-top: 25px;
@@ -218,32 +187,169 @@ h2 {
   font-size: 35px;
   margin-bottom: 25px;
 }
+/* ABOUT SECTION */
 
-#about p {
-  max-width: 750px;
-  line-height: 1.8;
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+/* ABOUT DESCRIPTION */
+
+.about-description {
+    background: #FAFAF8;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 25px;
+    line-height: 1.9;
+    color: #4B5563;
+    text-align: justify;
+    margin: 0;
+}
+
+.about-description strong {
+    color: #15171C;
+}
+
+/* EDUCATION */
+
+.about-grid > div:first-of-type {
+    background: #FAFAF8;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.about-grid h3 {
+    margin-bottom: 20px;
+    color: #15171C;
+}
+
+.timeline-item {
+    border-left: 3px solid #2851E3;
+    padding-left: 18px;
+    margin-bottom: 25px;
+}
+
+.timeline-item h4 {
+    margin-bottom: 5px;
+    color: #15171C;
+}
+
+.timeline-item p {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.timeline-item span {
+    color: #6B7280;
+    font-size: 14px;
+}
+
+/* HOBBIES PRODUCT CARDS */
+
+.hobbies-column {
+    grid-column: 1 / -1;
+    background: #FAFAF8;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.hobbies-column h3 {
+    margin-bottom: 25px;
+}
+
+.hobbies-column {
+    display: block;
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.mini-hobby-card {
+    display: block;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    overflow: hidden;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.mini-hobby-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.mini-hobby-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.mini-hobby-card div {
+    padding: 18px;
+}
+
+.mini-hobby-card h4 {
+    margin-bottom: 10px;
+    color: #15171C;
+}
+
+.mini-hobby-card p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+.mini-hobby-card a {
+    color: #2851E3;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hobbies-column {
+        grid-column: auto;
+    }
+
+    .mini-hobby-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mini-hobby-card img {
+        width: 120px;
+        height: 120px;
+    }
 }
 .card {
     background: white;
     padding: 25px;
-    border-radius: 12px;
     text-align: center;
-    transition: 0.3s ease;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
 .card i {
-    font-size: 40px;
+    font-size: 42px;
     color: #2851E3;
     margin-bottom: 15px;
 }
 
 .card h3 {
-    margin-bottom: 8px;
-}
-
-.card p {
-    color: #6B7280;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .card:hover {
