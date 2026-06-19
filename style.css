@@ -1,15 +1,40 @@
+/* =========================================
+   GLOBAL RESET & VARIABLES
+========================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
-body {
-   
-  background: #f7f7f7;
-  color: #222;
+/* =========================================
+  BODY AND THEME VARIABLES
+========================================= */
+:root {
+  --bg: #0f1117;
+  --text: #FAFAF8;
+  --card: rgba(255,255,255,0.05);
 }
+
+.light-theme {
+  --bg: #f7f7f7;
+  --text: #15171C;
+  --card: white;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+.card,
+.project,
+.about-description,
+.mini-hobby-card {
+  background: var(--card);
+}
+/* =========================================
+   NAVIGATION BAR
+========================================= */
 
 header {
   background: transparent;
@@ -34,6 +59,8 @@ nav {
 }
 
 .logo {
+    margin:0;
+    font-size: 24px;
   color: white;
 }
 .logo:hover{
@@ -54,7 +81,48 @@ ul li a {
 ul li a:hover {
   color: #00bcd4;
 }
+.theme-toggle {
+  margin-left: 20px;
+}
 
+.theme-toggle input {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  width: 70px;
+  height: 34px;
+  background: #1f2937;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: white;
+  border-radius: 50%;
+  left: 3px;
+  transition: 0.3s;
+}
+
+#theme-switch:checked + .slider::before {
+  transform: translateX(36px);
+}
+
+.sun,
+.moon {
+  font-size: 14px;
+  z-index: 1;
+}
 #menuBtn {
   display: none;
   font-size: 24px;
@@ -90,8 +158,69 @@ section {
   font-size: 72px;
   font-weight: 800;
   text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+
+}
+#typing-text {
+  color: #2851E3;
 }
 
+#typing-text::after {
+  content: "|";
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+/* ===== GLOBAL SECTION BACKGROUND ===== */
+
+section:not(.hero) {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(40, 81, 227, 0.15),
+      transparent 30%),
+
+    radial-gradient(circle at bottom right,
+      rgba(0, 188, 212, 0.08),
+      transparent 35%),
+
+    linear-gradient(
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px
+    ),
+
+    #0f1117;
+
+  background-size:
+    auto,
+    auto,
+    32px 32px,
+    32px 32px,
+    auto;
+
+  color: #FAFAF8;
+}
+#draggableText {
+  display: inline-block;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.4s ease;
+}
+
+#draggableText:active {
+  cursor: grabbing;
+}
 .hero h3 {
   font-size: 28px;
   margin: 15px 0;
@@ -334,6 +463,8 @@ h2 {
         height: 120px;
     }
 }
+/* skills */
+
 .card {
     background: white;
     padding: 25px;
@@ -360,7 +491,39 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
 }
+.skill-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
 
+.skill-tab {
+  padding: 12px 24px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: #FAFAF8;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.skill-tab.active,
+.skill-tab:hover {
+  background: #2851E3;
+  color: white;
+}
+
+.skills-content {
+  display: none;
+}
+
+.skills-content.active {
+  display: block;
+}
+/* project */
 .card,
 .project {
   background: white;
@@ -460,4 +623,214 @@ footer {
   .hero h1 {
     font-size: 38px;
   }
+}
+/* ===== DARK PORTFOLIO THEME ===== */
+
+body {
+  background: #0f1117;
+}
+
+/* Headings */
+
+section:not(.hero) h2,
+section:not(.hero) h3,
+section:not(.hero) h4 {
+  color: #FAFAF8;
+}
+
+/* Cards */
+
+.about-description,
+.about-grid > div:first-of-type,
+.hobbies-column,
+.card,
+.project,
+.mini-hobby-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+}
+
+/* Text */
+
+.about-description,
+.timeline-item p,
+.timeline-item span,
+.mini-hobby-card p,
+.project p,
+.card p {
+  color: #B8BDC7;
+}
+
+.about-description strong,
+.timeline-item h4,
+.mini-hobby-card h4 {
+  color: #FAFAF8;
+}
+
+/* Form */
+
+input,
+textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9CA3AF;
+}
+
+/* Hobbies */
+
+.hobbies-column {
+  background: rgba(255,255,255,0.04);
+}
+
+.mini-hobby-card {
+  background: rgba(255,255,255,0.06);
+}
+
+/* Hover */
+
+.card:hover,
+.project:hover,
+.mini-hobby-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(40,81,227,0.15);
+}
+
+/* Contact */
+
+#contact form {
+  background: rgba(255,255,255,0.03);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Footer */
+
+footer {
+  background: #0b0d12;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+/* LIGHT THEME OVERRIDES */
+
+body.light-theme {
+  background: #f7f7f7;
+  color: #15171C;
+}
+
+body.light-theme section:not(.hero) {
+  background: #f7f7f7;
+  color: #15171C;
+}
+
+body.light-theme .about-description,
+body.light-theme .about-grid > div:first-of-type,
+body.light-theme .hobbies-column,
+body.light-theme .card,
+body.light-theme .project,
+body.light-theme .mini-hobby-card,
+body.light-theme #contact form {
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  color: #15171C;
+}
+
+body.light-theme section:not(.hero) h2,
+body.light-theme section:not(.hero) h3,
+body.light-theme section:not(.hero) h4,
+body.light-theme .about-description strong,
+body.light-theme .timeline-item h4,
+body.light-theme .mini-hobby-card h4 {
+  color: #15171C;
+}
+
+body.light-theme .about-description,
+body.light-theme .timeline-item p,
+body.light-theme .timeline-item span,
+body.light-theme .mini-hobby-card p,
+body.light-theme .project p,
+body.light-theme .card p {
+  color: #4B5563;
+}
+
+body.light-theme input,
+body.light-theme textarea {
+  background: #ffffff;
+  color: #15171C;
+  border: 1px solid #ccc;
+}
+
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder {
+  color: #6B7280;
+}
+/* LIGHT THEME SKILL TABS */
+
+body.light-theme .skill-tab {
+  background: #ffffff;
+  color: #15171C;
+  border: 1px solid #D1D5DB;
+}
+
+body.light-theme .skill-tab:hover {
+  background: #2851E3;
+  color: white;
+}
+
+body.light-theme .skill-tab.active {
+  background: #2851E3;
+  color: white;
+}
+/* =========================================
+   LIGHT THEME NAVBAR
+========================================= */
+
+body.light-theme header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo */
+
+body.light-theme header.scrolled .logo {
+  color: #15171C;
+}
+
+body.light-theme header.scrolled .logo:hover {
+  color: #2851E3;
+}
+
+/* Navigation Links */
+
+body.light-theme header.scrolled ul li a {
+  color: #15171C;
+}
+
+body.light-theme header.scrolled ul li a:hover {
+  color: #2851E3;
+}
+
+/* Mobile Menu Icon */
+
+body.light-theme header.scrolled #menuBtn {
+  color: #15171C;
+}
+
+/* Theme Toggle Background */
+
+body.light-theme .slider {
+  background: #D1D5DB;
+}
+
+/* Remove Hero Text Shadow When Scrolled */
+
+body.light-theme header.scrolled .logo,
+body.light-theme header.scrolled ul li a {
+  text-shadow: none;
 }

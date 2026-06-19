@@ -20,6 +20,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch" class="slider">
+    <span class="sun">🌙</span>
+    <span class="moon">☀️</span>
+  </label>
+</div>
       <button id="menuBtn">☰</button>
     </nav>
   </header>
@@ -27,11 +34,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   <section id="home" class="hero">
     <div>
      
-
 <h1>Dikesh Sapkota</h1>
 
-<h3>Full Stack Developer</h3>
-
+<h3 id="draggableText">
+  <span id="typing-text"></span>
+</h3>
 <p>
 Building modern web applications with clean code,
 beautiful interfaces and scalable backend systems.
@@ -145,60 +152,184 @@ beautiful interfaces and scalable backend systems.
 </div>
 </section>
 <!-- skills section with cards for each skill -->
-  <section id="skills">
-    <h2>Skills</h2>
+<section id="skills">
+  <h2>Skills</h2>
+<div class="skill-tabs">
 
+  <button class="skill-tab active" data-target="webSkills">
+    🌐 Web Development
+  </button>
+
+  <button class="skill-tab" data-target="programmingSkills">
+    💻 Programming
+  </button>
+
+  <button class="skill-tab" data-target="databaseSkills">
+    🗄️ Databases
+  </button>
+
+  <button class="skill-tab" data-target="toolsSkills">
+    🛠️ Tools
+  </button>
+
+</div>
+
+  <!-- WEB DEVELOPMENT -->
+
+  <div class="skills-content active" id="webSkills">
     <div class="cards">
 
-        <div class="card">
-            <i class="fab fa-html5"></i>
-            <h3>HTML</h3>
-            <p>Proficient</p>
-        </div>
+      <div class="card">
+        <i class="fab fa-html5"></i>
+        <h3>HTML</h3>
+        <p>Proficient</p>
+      </div>
 
-        <div class="card">
-            <i class="fab fa-css3-alt"></i>
-            <h3>CSS</h3>
-            <p>Proficient</p>
-        </div>
+      <div class="card">
+        <i class="fab fa-css3-alt"></i>
+        <h3>CSS</h3>
+        <p>Proficient</p>
+      </div>
 
-        <div class="card">
-            <i class="fab fa-js"></i>
-            <h3>JavaScript</h3>
-            <p>Proficient</p>
-        </div>
+      <div class="card">
+        <i class="fab fa-js"></i>
+        <h3>JavaScript</h3>
+        <p>Proficient</p>
+      </div>
 
-        <div class="card">
-            <i class="fab fa-react"></i>
-            <h3>React</h3>
-            <p>Familiar</p>
-        </div>
+      <div class="card">
+        <i class="fab fa-react"></i>
+        <h3>React</h3>
+        <p>Beginner</p>
+      </div>
 
-        <div class="card">
-            <i class="fab fa-node-js"></i>
-            <h3>Node.js</h3>
-            <p>Familiar</p>
-        </div>
+      <div class="card">
+        <i class="fab fa-node-js"></i>
+        <h3>Node.js</h3>
+        <p>Beginner</p>
+      </div>
 
-        <div class="card">
-            <i class="fas fa-database"></i>
-            <h3>MySQL</h3>
-            <p>Familiar</p>
-        </div>
+      <div class="card">
+        <i class="fas fa-server"></i>
+        <h3>Express.js</h3>
+        <p>Beginner</p>
+      </div>
 
-        <div class="card">
-            <i class="fab fa-git-alt"></i>
-            <h3>Git & GitHub</h3>
-            <p>Proficient</p>
-        </div>
+      <div class="card">
+        <i class="fas fa-plug"></i>
+        <h3>REST API</h3>
+        <p>Familiar</p>
+      </div>
 
-        <div class="card">
-            <i class="fas fa-plug"></i>
-            <h3>REST API</h3>
-            <p>Familiar</p>
-        </div>
+      
 
     </div>
+  </div>
+
+  <!-- PROGRAMMING -->
+
+  <div class="skills-content" id="programmingSkills">
+    <div class="cards">
+
+      <div class="card">
+        <i class="fas fa-code"></i>
+        <h3>C</h3>
+        <p>Intermediate</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>C++</h3>
+        <p>Intermediate</p>
+      </div>
+
+      <div class="card">
+        <i class="fab fa-js"></i>
+        <h3>JavaScript</h3>
+        <p>Proficient</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-project-diagram"></i>
+        <h3>DSA</h3>
+        <p>Learning</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-cubes"></i>
+        <h3>OOP</h3>
+        <p>Intermediate</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-brain"></i>
+        <h3>Problem Solving</h3>
+        <p>Strong</p>
+      </div>
+
+    </div>
+  </div>
+  <!-- DATABASE -->
+<div class="skills-content" id="databaseSkills">
+  <div class="cards">
+
+    <div class="card">
+      <i class="fas fa-database"></i>
+      <h3>MySQL</h3>
+      <p>Familiar</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-table"></i>
+      <h3>Database Design</h3>
+      <p>Learning</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-code"></i>
+      <h3>SQL Queries</h3>
+      <p>Familiar</p>
+    </div>
+
+  </div>
+</div>
+  <!-- TOOLS -->
+
+  <div class="skills-content" id="toolsSkills">
+    <div class="cards">
+
+      <div class="card">
+        <i class="fab fa-git-alt"></i>
+        <h3>Git</h3>
+        <p>Proficient</p>
+      </div>
+
+      <div class="card">
+        <i class="fab fa-github"></i>
+        <h3>GitHub</h3>
+        <p>Proficient</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-code"></i>
+        <h3>VS Code</h3>
+        <p>Daily Use</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-paper-plane"></i>
+        <h3>Postman</h3>
+        <p>Familiar</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-database"></i>
+        <h3>MySQL Workbench</h3>
+        <p>Familiar</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 <!-- projects section with project descriptions and links -->
   <section id="projects">
@@ -228,6 +359,6 @@ beautiful interfaces and scalable backend systems.
     <p>© 2026 Dikesh Sapkota. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="./javascript/script.js"></script>
 </body>
 </html>
