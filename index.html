@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dikesh Sapkota | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-
+<!-- header section with navigation links and logo -->
   <header>
     <nav>
       <h2 class="logo">Dikesh</h2>
@@ -21,10 +23,10 @@
       <button id="menuBtn">☰</button>
     </nav>
   </header>
-
+<!-- home section with hero content and social links -->
   <section id="home" class="hero">
     <div>
-      <p class="small-text">WELCOME TO MY WEBSITE</p>
+     
 
 <h1>Dikesh Sapkota</h1>
 
@@ -34,9 +36,32 @@
 Building modern web applications with clean code,
 beautiful interfaces and scalable backend systems.
 </p>
+<div class="availability">
+    <span class="pulse"></span>
+    Currently Available for Work
+</div>
+
+<div class="social-links">
+
+    <a href="https://github.com/dikeshsapkota"
+       target="_blank">
+       <i class="fab fa-github"></i>
+    </a>
+
+    <a href="https://www.linkedin.com/in/dikesh-sapkota-430831316/"
+       target="_blank">
+       <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="https://instagram.com/dikeshsapkotaa"
+       target="_blank">
+       <i class="fab fa-instagram"></i>
+    </a>
+
+</div>
     </div>
   </section>
-
+<!-- about section with personal information and hobbies -->
   <section id="about">
     <h2>About Me</h2>
     <p>
@@ -45,21 +70,110 @@ beautiful interfaces and scalable backend systems.
       REST APIs, and I am currently learning React, Node.js and Express.js.
     </p>
   </section>
+  <section id="hobbies">
+    <h2>Things I Enjoy</h2>
 
+    <div class="hobby-grid">
+
+        <div class="hobby-card">
+            <img src="images/manwha.jpeg" alt="Reading Comics">
+            <h3>Reading Comics</h3>
+            <p>
+                I enjoy reading comics and mangas. They help me relax,
+                improve creativity, and explore storytelling from different perspectives.
+            </p>
+        </div>
+
+        <div class="hobby-card">
+            <img src="images/dikesh.jpeg" alt="Chess">
+            <h3>Chess</h3>
+            <p>
+                Chess helps me improve strategic thinking and problem-solving.
+            </p>
+
+            <a href="https://www.chess.com/member/blunderkingdikesh"
+               target="_blank">
+               View Chess Profile →
+            </a>
+        </div>
+
+        <div class="hobby-card">
+            <img src="images/coding.webp" alt="Coding">
+            <h3>Coding & Coffee</h3>
+            <p>
+                My favorite combination. I enjoy building web applications while
+                sipping coffee and learning new technologies.
+            </p>
+        </div>
+
+        <div class="hobby-card">
+            <img src="images/messi.jpg" alt="Football">
+            <h3>Football</h3>
+            <p>
+                A passionate football fan who enjoys watching matches, following
+                major tournaments, and analyzing team strategies.
+            </p>
+        </div>
+
+    </div>
+</section>
+<!-- skills section with cards for each skill -->
   <section id="skills">
     <h2>Skills</h2>
-    <div class="cards">
-      <div class="card">HTML</div>
-      <div class="card">CSS</div>
-      <div class="card">JavaScript</div>
-      <div class="card">React</div>
-      <div class="card">Node.js</div>
-      <div class="card">MySQL</div>
-      <div class="card">Git & GitHub</div>
-      <div class="card">REST API</div>
-    </div>
-  </section>
 
+    <div class="cards">
+
+        <div class="card">
+            <i class="fab fa-html5"></i>
+            <h3>HTML</h3>
+            <p>Proficient</p>
+        </div>
+
+        <div class="card">
+            <i class="fab fa-css3-alt"></i>
+            <h3>CSS</h3>
+            <p>Proficient</p>
+        </div>
+
+        <div class="card">
+            <i class="fab fa-js"></i>
+            <h3>JavaScript</h3>
+            <p>Proficient</p>
+        </div>
+
+        <div class="card">
+            <i class="fab fa-react"></i>
+            <h3>React</h3>
+            <p>Familiar</p>
+        </div>
+
+        <div class="card">
+            <i class="fab fa-node-js"></i>
+            <h3>Node.js</h3>
+            <p>Familiar</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-database"></i>
+            <h3>MySQL</h3>
+            <p>Familiar</p>
+        </div>
+
+        <div class="card">
+            <i class="fab fa-git-alt"></i>
+            <h3>Git & GitHub</h3>
+            <p>Proficient</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-plug"></i>
+            <h3>REST API</h3>
+            <p>Familiar</p>
+        </div>
+
+    </div>
+</section>
+<!-- projects section with project descriptions and links -->
   <section id="projects">
     <h2>Projects</h2>
 
@@ -69,19 +183,9 @@ beautiful interfaces and scalable backend systems.
       <a href="#">View Project</a>
     </div>
 
-    <div class="project">
-      <h3>Student CRUD System</h3>
-      <p>A basic CRUD system using PHP/MySQL for insert, select, update and delete.</p>
-      <a href="#">View Project</a>
-    </div>
-
-    <div class="project">
-      <h3>Portfolio Website</h3>
-      <p>A personal responsive portfolio website using HTML, CSS and JavaScript.</p>
-      <a href="#">View Project</a>
-    </div>
+   
   </section>
-
+<!-- contact section with a contact form for visitors to send messages -->
   <section id="contact">
     <h2>Contact Me</h2>
 
@@ -92,7 +196,7 @@ beautiful interfaces and scalable backend systems.
       <button type="button" onclick="sendMessage()">Send Message</button>
     </form>
   </section>
-
+<!-- footer section with copyright information -->
   <footer>
     <p>© 2026 Dikesh Sapkota. All rights reserved.</p>
   </footer>

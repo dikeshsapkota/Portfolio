@@ -102,7 +102,108 @@ section {
   max-width: 600px;
   font-size: 18px;
 }
+.availability {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "JetBrains Mono", monospace;
+    color: #cfd6e8;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+.pulse {
+    width: 12px;
+    height: 12px;
+    background: #22C55E;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pulse::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #22C55E;
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.social-links a {
+    font-size: 28px;
+    color: #b4b4b4;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2851E3;
+    transform: translateY(-4px);
+}
+#hobbies {
+    padding: 100px 8%;
+}
+
+#hobbies h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 25px;
+}
+
+.hobby-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.hobby-card:hover {
+    transform: translateY(-8px);
+}
+
+.hobby-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.hobby-card h3 {
+    padding: 15px 20px 10px;
+}
+
+.hobby-card p {
+    padding: 0 20px 20px;
+    color: #6B7280;
+}
+
+.hobby-card a {
+    display: inline-block;
+    padding: 0 20px 20px;
+    color: #2851E3;
+    text-decoration: none;
+    font-weight: 600;
+}
 .btn {
   display: inline-block;
   margin-top: 25px;
@@ -122,7 +223,32 @@ h2 {
   max-width: 750px;
   line-height: 1.8;
 }
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s ease;
+}
 
+.card i {
+    font-size: 40px;
+    color: #2851E3;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #6B7280;
+    font-size: 14px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
